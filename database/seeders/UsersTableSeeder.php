@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('users')->delete();
-
+        
         \DB::table('users')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'role_id' => 2,
@@ -30,14 +30,14 @@ class UsersTableSeeder extends Seeder
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
-                'remember_token' => 'e7SqDbldRMiasTnZIAtfwBDOnSZIXcc8uAr8vT6JYIzwwpn2lhjNzP2jLj1B',
+                'remember_token' => 'K3I9EpPdOuDQHiIvtKpWCkqBlGMU6ZMwRdltpzUknT3mJLApSPjkHvLgm2VN',
                 'settings' => '{"locale":"en"}',
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => '2021-11-27 23:46:16',
                 'updated_at' => '2021-11-29 12:54:07',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'role_id' => 1,
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2021-11-28 20:27:41',
                 'updated_at' => '2021-11-28 20:27:42',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'role_id' => 2,
@@ -66,14 +66,14 @@ class UsersTableSeeder extends Seeder
                 'password' => '$2y$10$j.JSLvmkzrk8Vu5E5HvT4eZhGd99GGoobrnL3UBANIOcRftY2cNYG',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
-                'remember_token' => 'CvN4IHNkmidufClqjQZURxHgTfgFe9VzyjTX5GfWPdjHV3eOak555CIUh0t8',
+                'remember_token' => '75vIpEsqL79gsG7P1DYBF84fUWOaBNKphoIovvXvtQmbte25gtE0sYierDlv',
                 'settings' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => '2021-11-29 12:57:55',
                 'updated_at' => '2021-11-29 13:12:13',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'role_id' => 3,
@@ -91,26 +91,26 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2021-11-29 13:12:59',
                 'updated_at' => '2021-11-29 13:13:19',
             ),
-            4 =>
-                array (
-                    'id' => 5,
-                    'role_id' => 3,
-                    'name' => 'John wick',
-                    'email' => 'johnwick@mailinator.com',
-                    'avatar' => 'users/default.png',
-                    'email_verified_at' => '2021-11-29 13:13:19',
-                    'password' => '$2y$10$.fDHqPrTpEFPCNiFLpLJ3eUDTngvjc9ui.iIImmyRZ3HsuWvoUtpi',
-                    'two_factor_secret' => NULL,
-                    'two_factor_recovery_codes' => NULL,
-                    'remember_token' => NULL,
-                    'settings' => NULL,
-                    'current_team_id' => NULL,
-                    'profile_photo_path' => NULL,
-                    'created_at' => '2021-11-29 13:12:59',
-                    'updated_at' => '2021-11-29 13:13:19',
-                ),
+            4 => 
+            array (
+                'id' => 5,
+                'role_id' => 3,
+                'name' => 'John wick',
+                'email' => 'johnwick@mailinator.com',
+                'avatar' => 'users/default.png',
+                'email_verified_at' => '2021-11-29 13:13:19',
+                'password' => '$2y$10$.fDHqPrTpEFPCNiFLpLJ3eUDTngvjc9ui.iIImmyRZ3HsuWvoUtpi',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => '2021-11-29 13:12:59',
+                'updated_at' => '2021-11-29 13:13:19',
+            ),
         ));
-
-
+        
+        
     }
 }
