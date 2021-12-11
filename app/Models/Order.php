@@ -26,6 +26,11 @@ class Order extends Model
 
     public function shop()
     {
-        return $this->belongsTo(Shop::class);
+        return $this->belongsTo(Shop::class, 'shop_id');
+    }
+
+    public static function getOwnOrderShop($shop_id)
+    {
+        return Order::where('shop_id', $shop_id)->paginate(5);
     }
 }
