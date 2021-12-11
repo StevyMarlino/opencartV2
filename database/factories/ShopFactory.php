@@ -14,10 +14,10 @@ class ShopFactory extends Factory
      */
     public function definition()
     {
-        $name = Str::slug($this->faker->sentence(2));
+        $name = $this->faker->sentence(2);
         return [
             'name' => $name,
-            'slug' => $name,
+            'slug' => Str::slug($name),
             'description' => $this->faker->sentence(20),
             'is_active' => true
         ];
