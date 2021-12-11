@@ -21,9 +21,9 @@ class Shop extends Model
         return $this->hasMany(Product::class, 'shop_id');
     }
 
-    public function commande()
+    public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Order::class,'shop_id');
     }
 
     public static function findShopBySlug($slug)
