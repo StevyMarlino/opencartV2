@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Customers</a>
+                    <a href="{{ route('customers') }}" class="nav-link">Customers</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Marketing</a>

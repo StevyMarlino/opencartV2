@@ -76,16 +76,24 @@ class OrderController extends Controller
         $order->user_id = auth()->id();
 
 
+
         if (request('payment_method') == 'paypal') {
             $order->payment_method = 'paypal';
         }
 
+        foreach (\Cart::session(auth()->id())->getContent() as $item) {
+
+            $order->shop_id = $order->shop_id = $item->associatedModel['shop_id'];
+
+        }
         $order->save();
 
         $cartItems = \Cart::session(auth()->id())->getContent();
 
         foreach ($cartItems as $item) {
+
             $order->items()->attach($item->id, ['price' => $item->price, 'quantity' => $item->quantity]);
+
         }
 
         //$order->generateSubOrders();

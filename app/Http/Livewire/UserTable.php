@@ -21,8 +21,8 @@ class UserTable extends Component
 
         return view('livewire.user-table',
             [
-                'users' => User::where('first_name','like',"%{$this->search}%")
-                    ->orWhere('last_name','like',"%{$this->search}%")->paginate(5)
+                'users' => User::where('name','like',"%{$this->search}%")
+                    ->orWhere('email','like',"%{$this->search}%")->paginate(5)
             ]
         );
     }

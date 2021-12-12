@@ -16,7 +16,7 @@ class OrderTable extends Component
     {
         return view('livewire.order-table',
             [
-                'orders' => Order::paginate(5)
+                'orders' => Order::getOwnOrderShop(auth()->user()->shop->id)
             ]
         );
 

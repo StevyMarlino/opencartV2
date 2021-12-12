@@ -85,6 +85,11 @@
                                                         </td>
                                                     </tr>
                                                 @empty
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            Not Order(s)
+                                                        </td>
+                                                    </tr>
                                                 @endforelse
                                                 </tbody>
                                             </table>

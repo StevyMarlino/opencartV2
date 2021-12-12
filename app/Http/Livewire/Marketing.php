@@ -20,7 +20,7 @@ class Marketing extends Component
     public function render()
     {
         return view('livewire.marketing',[
-            'productsNotNull' => Produit::whereNotNull('image_url')->get(),
+            'productsNotNull' => Produit::whereNotNull('cover_img')->get(),
             'products' => Produit::all(),
         ]);
     }
@@ -52,7 +52,7 @@ class Marketing extends Component
 
     private function onlyThreeSlide() : bool
     {
-        $imageUrl = Produit::whereNotNull('image_url')->count();
+        $imageUrl = Produit::whereNotNull('cover_img')->count();
 
         if($imageUrl >= 3){
             return false;
@@ -65,7 +65,7 @@ class Marketing extends Component
     {
         $slideProduct = Produit::find($id);
 
-        $slideProduct->image_url = null;
+        $slideProduct->cover_img = null;
 
         $slideProduct->save();
 

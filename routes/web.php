@@ -53,7 +53,7 @@ Route::middleware(['auth','verified'])->group(function () {
 
 
 
-//    Route::get('/customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customers');
+    Route::get('/customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customers');
 //    Route::get('/categories',[\App\Http\Controllers\CategoryController::class,'index'])->name('categories');
 //    Route::get('/marketing',[\App\Http\Controllers\MarketingController::class,'index'])->name('marketing');
 //    Route::get('/analytics',[\App\Http\Controllers\AnalyticsController::class,'index'])->name('analytics');

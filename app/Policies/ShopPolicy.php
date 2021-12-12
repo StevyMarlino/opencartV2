@@ -31,7 +31,7 @@ class ShopPolicy
      */
     public function view(User $user, Shop $shop)
     {
-        return $user->id === $shop->user_id;
+
     }
 
     /**

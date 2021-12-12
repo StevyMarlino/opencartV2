@@ -17,10 +17,10 @@
                     </svg>
                 </span> Category
                             </div>
-                            {{--                            @forelse($category as $categories)--}}
-                            <a class="nav-link font-weight-bold" href="#">Nom Categorie</a>
-                        {{--                        @empty--}}
-                        {{--                        @endforelse--}}
+                            @forelse($categories as $category)
+                                <a class="nav-link font-weight-bold" href="#">{{ $category->name }}</a>
+                        @empty
+                        @endforelse
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -110,7 +110,9 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <a href="{{ route('product.details',[$slug,$product->id]) }}" class="btn btn-paypal">details</a>
+                                    <h5 class="font-weight-bolder">{{ number_format($product->price) }} CFA</h5>
+                                    <a href="{{ route('product.details',[$slug,$product->id]) }}"
+                                       class="btn btn-paypal">details</a>
                                 </div>
                             </div>
                         </a>

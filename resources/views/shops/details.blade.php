@@ -88,7 +88,7 @@
 </svg></span> Add to cart
                             </button>
                         </a> <a href="#"><a class="btn btn-success btn-sm"
-                                            href="https://wa.me/237690472270?text=Hello {{ route('product.details',[$slug,$product->id]) }}"
+                                            href="https://wa.me/{{$product->shop->owner->phone}}?text=Hello i just order this product {{ route('product.details',[$slug,$product->id]) }}"
                                             target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp
                                 Me</a></a></p>
                 </div>

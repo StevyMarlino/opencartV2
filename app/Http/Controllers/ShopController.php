@@ -14,6 +14,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use TCG\Voyager\Models\Category;
 
 class ShopController extends Controller
 {
@@ -71,18 +72,21 @@ class ShopController extends Controller
      */
     public function show($slug)
     {
-        $shop = Shop::findShopBySlug($slug)[0];
-        $products = Product::getProductShop($shop->id);
 
-        return view('shops.index', ['products' => $products,'slug' => $slug]);
+        $shop = Shop::findShopBySlug($slug)[0];
+        $datas = [
+            'products' => $products = Product::getProductShop($shop->id),
+            'slug' => $slug,
+            'categories' => Category::whereNull('parent_id')->get(),
+        ];
+
+
+        return view('shops.index', $datas);
     }
 
-    public function details($slug,$product_id)
+    public function details($slug, $product_id)
     {
-
-
-        return view('shops.details',['product' => Product::find($product_id),'slug' =>  $slug]);
-
+        return view('shops.details', ['product' => Product::find($product_id), 'slug' => $slug]);
     }
 
     /**
