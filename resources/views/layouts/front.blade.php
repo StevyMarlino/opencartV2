@@ -56,9 +56,16 @@
                             <a href="{{ route('admin.index') }}" class="nav-link font-weight-bold">Go to your shop</a>
                         </li>
                     @else
-                        <li class="nav-item">
-                            <a href="{{ route('shops.create') }}" class="nav-link font-weight-bold">Create your shop</a>
-                        </li>
+                        @if(isset(auth()->user()->shop->is_active) && !auth()->user()->shop->is_active && (auth()->user()->shop->user_id == auth()->user()->id))
+                            <li class="nav-item">
+                                <a href="#" class="nav-link font-weight-bold">Shop under Verification</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a href="{{ route('shops.create') }}" class="nav-link font-weight-bold">Create your
+                                    shop</a>
+                            </li>
+                        @endif
                     @endif
                 @else
 
@@ -71,7 +78,7 @@
                 @endauth
                 <li class="nav-item">
                     @auth
-                    <a href="{{ route('cart.index') }}" class="nav-link">
+                        <a href="{{ route('cart.index') }}" class="nav-link">
                         <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-cart-fill" viewBox="0 0 16 16">
@@ -80,14 +87,14 @@
                         </svg>
                     </span>
 
-                        <span class="pt-1">Cart</span>
-                        <div class="badge badge-danger">
+                            <span class="pt-1">Cart</span>
+                            <div class="badge badge-danger">
 
                                 {{Cart::session(auth()->id())->getContent()->count()}}
 
-                        </div>
-                        @endauth
-                    </a>
+                            </div>
+                            @endauth
+                        </a>
                 </li>
             </ul>
         </div>

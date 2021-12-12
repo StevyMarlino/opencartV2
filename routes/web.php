@@ -4,8 +4,6 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\Admin\ShopController as Admin;
-use App\Models\Shop;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,12 +46,14 @@ Route::middleware(['auth','verified'])->group(function () {
 
         Route::get('/',[ Admin::class,'index'])->name('admin.index');
         Route::get('/products',[\App\Http\Controllers\Admin\ProductController::class,'index'])->name('admin.products');
+        Route::get('/customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customers');
 
     });
 
+    Route::resource('product',\App\Http\Controllers\ProductController::class);
 
 
-    Route::get('/customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customers');
+
 //    Route::get('/categories',[\App\Http\Controllers\CategoryController::class,'index'])->name('categories');
 //    Route::get('/marketing',[\App\Http\Controllers\MarketingController::class,'index'])->name('marketing');
 //    Route::get('/analytics',[\App\Http\Controllers\AnalyticsController::class,'index'])->name('analytics');
