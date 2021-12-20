@@ -42,6 +42,7 @@
     </body>
 
     <script src="{{ asset('build/js/intlTelInput.js') }}"></script>
+
     <script>
         var input = document.querySelector("#phone"),
             errorMsg = document.querySelector("#error-msg"),
@@ -50,27 +51,8 @@
         // here, the index maps to the error code returned from getValidationError - see readme
         var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
-       var iti =  window.intlTelInput(input, {
-            // allowDropdown: false,
-            // autoHideDialCode: false,
-            // autoPlaceholder: "off",
-            // dropdownContainer: document.body,
-            // excludeCountries: ["us"],
-            // formatOnDisplay: false,
-            geoIpLookup: function(callback) {
-              $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                var countryCode = (resp && resp.country) ? resp.country : "";
-                callback(countryCode);
-              });
-            },
-            // hiddenInput: "full_number",
-             initialCountry: "auto",
-            // localizedCountries: { 'de': 'Deutschland' },
-             nationalMode: true,
-            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-            // placeholderNumberType: "MOBILE",
-            // preferredCountries: ['cn', 'jp'],
-            // separateDialCode: true,
+        // initialise plugin
+        var iti = window.intlTelInput(input, {
             utilsScript: "{{ asset('build/js/utils.js') }}",
         });
 

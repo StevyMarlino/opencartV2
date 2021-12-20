@@ -16,14 +16,14 @@
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="email" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="phone" value="{{ __('Phone') }}" />
                 <x-jet-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
-                <span id="valid-msg" class="hide text-blue-600">✓ Valid</span>
-                <span id="error-msg" class="hide"></span>
+                <span id="valid-msg" class="hide" style="color:green;">✓ Valid</span>
+                <span id="error-msg" class="hide" style="color:red;"></span>
             </div>
 
             <div class="mt-4">

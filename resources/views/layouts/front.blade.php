@@ -6,15 +6,15 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-light navbar-theme-white mb-4">
     <div class="container position-relative">
         <a class="navbar-brand mr-lg-3" href="#">
-            <img class="navbar-brand-dark" src="../../assets/brand/light.svg" alt="menuimage">
-            <img class="navbar-brand-light" src="../../assets/brand/dark.svg" alt="menuimage">
+            <img class="navbar-brand-dark" src="{{ asset('assets/brand/light.svg') }}" alt="menuimage">
+            <img class="navbar-brand-light" src="{{ asset('img/logo.png') }}" alt="menuimage">
         </a>
         <div class="navbar-collapse collapse" id="navbar-default-primary">
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col collapse-brand">
                         <a href="#">
-                            <img src="../../assets/img/brand/dark.svg" alt="menuimage">
+                            <img src="{{ asset('img/logo.png') }}" alt="menuimage">
                         </a>
                     </div>
                     <div class="col collapse-close">
@@ -26,10 +26,11 @@
             </div>
             <ul class="navbar-nav w-75 ">
                 <div class="input-group">
+                    @livewire('livewire-ui-spotlight')
                     <input type="text" class="form-control" placeholder="Search products"
                            aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button" id="button-addon2">
+                        <button class="btn btn-secondary" type="button" @click="$dispatch('toggle-spotlight')" id="button-addon2">
                                         <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                              fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -46,7 +47,7 @@
 
                 @auth
                     <li class="nav-item">
-                        <form action=" {{ url('/logout') }} " method="POST">
+                        <form action=" {{ route('logout') }} " method="POST">
                             @csrf
                             <input type="submit" value="Logout"/>
                         </form>
@@ -90,7 +91,7 @@
                             <span class="pt-1">Cart</span>
                             <div class="badge badge-danger">
 
-                                {{Cart::session(auth()->id())->getContent()->count()}}
+                                {{ Cart::session(auth()->id())->getContent()->count() }}
 
                             </div>
                             @endauth
@@ -124,9 +125,10 @@
 <!-- navbarend-->
 @yield('content')
 
+
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/js/headroom.min.js') }}"></script>
 <script src="{{ asset('assets/js/countUp.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
