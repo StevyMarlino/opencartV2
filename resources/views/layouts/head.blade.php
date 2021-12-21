@@ -22,7 +22,6 @@
     <link type="text/css" href="{{ asset('assets/css/rocket.css') }}" rel="stylesheet"/>
     <link type="text/css" href="{{ asset('assets/css/style.css') }}" rel="stylesheet"/>
     <link type="text/css" href="{{ asset('assets/css/image-uploader.min.css') }}" rel="stylesheet"/>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
 
 
