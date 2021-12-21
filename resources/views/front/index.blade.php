@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-4">
                     <p class="text-right"><a href="#">
-                            <button class="btn btn-primary btn-sm animate-right-3">See All</button>
+{{--                            <button class="btn btn-primary btn-sm animate-right-3">See All</button>--}}
                         </a></p>
                 </div>
             </div>

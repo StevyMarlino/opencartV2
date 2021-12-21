@@ -18,7 +18,8 @@
                 </span> Category
                             </div>
                             @forelse($categories as $category)
-                                <a class="nav-link font-weight-bold" href="{{ route('product.index',['category_id' => $category->id]) }}">{{ $category->name }}</a>
+                                <a class="nav-link font-weight-bold"
+                                   href="{{ route('product.index',['category_id' => $category->id]) }}">{{ $category->name }}</a>
                         @empty
                         @endforelse
                     </div>
