@@ -1,10 +1,10 @@
 {{-- The Master doesn't talk, he acts. --}}
 <ul class="navbar-nav w-75 ">
     <div class="input-group">
-        <input wire:model.debounce.700ms="search" class="form-control" placeholder="Search Shop"
+        <input wire:model.debounce.700ms="search" class="form-control" placeholder="Search Shop" wire:change="updateSearch"
                aria-label="Recipient's username" aria-describedby="button-addon2">
         <div class="input-group-append">
-            <button class="btn btn-secondary" type="button" @click="$dispatch('toggle-spotlight')"
+            <button class="btn btn-secondary" type="button"
                     id="button-addon2">
                                         <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

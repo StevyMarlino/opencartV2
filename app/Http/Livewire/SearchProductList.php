@@ -3,25 +3,24 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Shop;
 use Livewire\WithPagination;
 
-class ShopList extends Component
+class SearchProductList extends Component
 {
     use WithPagination;
 
     public $search = '';
 
-    protected $listeners = ['searchUpdated' => 'onSearchUpdate'];
+    protected $listeners = ['searchProductUpdated' => 'onSearchProductUpdate'];
 
     public function render()
     {
-        return view('livewire.shop-list',[
-            'shops' => Shop::where('name','like',"%{$this->search}%")->paginate(5)
+        return view('livewire.search-product-list',[
+            'products' => \App\Models\Product::where('name','like',"%{$this->search}%")->paginate(5)
         ]);
     }
 
-    public function onSearchUpdate($name)
+    public function onSearchProductUpdate($name)
     {
         $this->search = $name;
     }
@@ -39,5 +38,4 @@ class ShopList extends Component
     {
         return 'livewire.pagination';
     }
-
 }

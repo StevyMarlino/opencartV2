@@ -2,7 +2,7 @@
 
 <ul class="navbar-nav w-75 ">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search products"
+        <input wire:model.debounce.700ms="searchProduct" wire:change="updateProductSearch" class="form-control" placeholder="Search products"
                aria-label="Recipient's username" aria-describedby="button-addon2">
         <div class="input-group-append">
             <button class="btn btn-secondary" type="button"
@@ -18,5 +18,3 @@
         </div>
     </div>
 </ul>
-
-

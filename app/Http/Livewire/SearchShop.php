@@ -2,13 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Shop;
 use Livewire\Component;
-use Livewire\WithPagination;
+
 
 class SearchShop extends Component
 {
-    use WithPagination;
 
     public string $search = '';
 
@@ -18,12 +16,12 @@ class SearchShop extends Component
 
     public function render()
     {
+        return view('livewire.search-shop');
+    }
 
-        return view('livewire.search-shop',
-            [
-                'shops' => Shop::where('name','like',"%{$this->search}%")->paginate(5)
-            ]
-        );
+    public function updateSearch()
+    {
+        $this->emit('searchUpdated',$this->search);
     }
 
 }
