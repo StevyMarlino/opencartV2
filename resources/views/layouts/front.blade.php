@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col collapse-brand">
                         <a href="#">
-                            <img src="{{ asset('img/logo.png') }}" alt="menuimage">
+                            <img src="{{ asset('img/logo.png') }}" alt="menuimage" />
                         </a>
                     </div>
                     <div class="col collapse-close">

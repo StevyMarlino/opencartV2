@@ -73,15 +73,7 @@ class ShopController extends Controller
     public function show($slug)
     {
 
-        $shop = Shop::findShopBySlug($slug)[0];
-        $datas = [
-            'products' => $products = Product::getProductShop($shop->id),
-            'slug' => $slug,
-            'categories' => Category::whereNull('parent_id')->get(),
-        ];
-
-
-        return view('shops.index', $datas);
+        return view('shops.index');
     }
 
     public function details($slug, $product_id)

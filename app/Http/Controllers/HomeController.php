@@ -10,6 +10,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('front.index',['shops' => Shop::take(5)->get()]);
+        return view('front.index',['shops' => Shop::where('is_active',1)->get()]);
     }
 }

@@ -17,7 +17,7 @@ class ShopList extends Component
     public function render()
     {
         return view('livewire.shop-list',[
-            'shops' => Shop::where('name','like',"%{$this->search}%")->paginate(5)
+            'shops' => Shop::where('name','like',"%{$this->search}%")->where('is_active',1)->paginate(5)
         ]);
     }
 
