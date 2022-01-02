@@ -23,7 +23,7 @@
                         </a></p>
                 </div>
             </div>
-            
+
                 @livewire('shop-list')
 
         </div>
