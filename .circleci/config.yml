@@ -30,6 +30,7 @@ jobs:
       - run: sudo docker-php-ext-install zip
       - run: sudo docker-php-ext-install pdo
       - run: sudo docker-php-ext-install pdo_mysql
+      - run: sudo docker-php-ext-intall pdo_pgsql
 
       # Download and cache dependencies
       - restore_cache:
